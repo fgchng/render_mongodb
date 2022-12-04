@@ -1,0 +1,113 @@
+<%- include('header'); -%>
+  <!--Profile-->
+  <div id="profile-upper">
+    <div id="profile-banner-image">
+      <div id="black-grd">
+      </div>
+    </div>
+    <div id="profile-d">
+      <div id="profile-pic">
+        <img src="../<%=user.profilePicture%>">
+      </div>
+      <div id="name">
+        <%=user.firstName.split(' ')[0]%> <br>
+        <%=user.lastName%>
+      </div>
+      <div id="edit-profile">
+        <i class='material-icons'></i>
+      </div>
+    </div>
+  </div>
+
+  <!--Contents-->
+  <div id="main-content">
+    <div id="description">
+      <div class="label">
+        <i class='bx bx-user-pin'></i></i>
+        <span>
+          <%=user.description%>
+        </span>
+        <!-- <div class="lb-action"><a href="/editProfile"><i class="material-icons">Edit Profile</i></a></div> -->
+      </div>
+
+      <div id="i-box">
+        <div id="loc"> 
+          <a href="#"><%=user.addressCity%></a>, <a href="#">Philippines</a></div>
+      </div>
+    </div>
+
+    <a href="/addListing" class="btn">Add Listing</a>
+
+    <!-- <div id="listings">
+      <div class="label">
+        <i class="l-i" id="l-i-p"></i>
+        <span>Listings</span>
+      </div>
+    </div> -->
+    <br><br>
+
+    <section class="properties container" id="properties">
+      <div class="heading">
+          <h2>Listings</h2>
+      </div>
+
+      <div class="properties-container container">
+        <% if (properties.length > 0) { %>
+          <% for (var i = 0; i < properties.length; i++) { %>
+              <div class="box">
+                  <div id="<%-properties[i]._id.toString()%>" class="carousel slide" data-interval="false">
+                      <ol class="carousel-indicators">
+                          <% for (var j = 0; j < properties[i].images.length; j++) { %>
+                              <% if( j == 0) { %>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="<%-j%>" class="active"></li>
+                              <% } else { %>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="<%-j%>"></li>
+                              <% } %>
+                          <% } %>
+                      </ol>
+                      <div class="carousel-inner">
+                          <% for (var j = 0; j < properties[i].images.length; j++) { %>
+                              <% if( j == 0) { %>
+                                  <div class="carousel-item active">
+                                      <img class="d-block w-100" src="../<%-properties[i].images[j]%>" alt="<%-j%> slide">
+                                  </div>
+                              <% } else { %>
+                                  <div class="carousel-item">
+                                      <img class="d-block w-100" src="../<%-properties[i].images[j]%>" alt="<%-j%> slide">
+                                  </div>
+                              <% } %>
+                          <% } %>
+                      </div>
+                      <a class="carousel-control-prev" href="#<%-properties[i]._id.toString()%>" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only"></span>
+                      </a>
+                      <a class="carousel-control-next" href="#<%-properties[i]._id.toString()%>" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only"></span>
+                      </a>
+                  </div>
+                  <a href="/listingPage/<%-properties[i]._id.toString()%>"><h3>Php <%-properties[i].price%></h3></a>
+                  <div class="content">
+                      <div class="text">
+                          <a href="/listingPage/<%-properties[i]._id.toString()%>"><h3><%-properties[i].name%></h3></a>
+                          <p><%-properties[i].addressCity%> City</p>
+                      </div>
+                      <div class="icon">
+                          <i class='bx bxs-bed'><span><%-properties[i].total_bedrooms%></span></i>
+                          <i class='bx bxs-bath'><span><%-properties[i].total_bathrooms%></span></i>
+                      </div>
+                  </div>
+                  <a href="/editListing/<%-properties[i]._id.toString()%>" class="btn">Edit</a>
+                  <a href="/deleteListing/<%-properties[i]._id.toString()%>" class="btn">Delete</a>
+
+              </div>
+          <% } %>
+      <% } else { %>
+          
+      <% } %>
+      </div>
+    </section>
+  </div>
+
+  <%- include('footer'); -%>

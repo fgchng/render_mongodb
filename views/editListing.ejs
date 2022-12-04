@@ -1,0 +1,101 @@
+<%- include('header') -%>
+    <div class="register container">
+        <div class="register-container">
+
+            <h2>Register your place</h2>
+
+            <!-- Register Form -->
+            <form action="/editListing" method="post" enctype="multipart/form-data"> 
+                <input type="hidden" name="listingId" value="<%- listing._id.toString() %> ">
+                <span>Enter your First Name</span>
+                <input type="text" name="firstName" id="" placeholder="First Name" required value="<%-listing.firstName%>">
+                <span>Enter your Last Name</span>
+                <input type="text" name="lastName" id="" placeholder="Last Name" required value="<%-listing.lastName%>">
+                <span>Enter your Phone</span>
+                <input type="tel" name="phoneNumber" id="" placeholder="Phone Number" required value="<%-listing.phoneNumber%>">
+                <span>Enter your email address</span>
+                <input type="email" name="emailAddress" id="" placeholder="yourmail@gmail.com" required value="<%-listing.emailAddress%>">
+                <span>Apartment Name</span>
+                <input type="text" name="name" id="" required <%-listing.name%>>
+                <span>Room ID</span>
+                <input type="text" name="room_id" id="" <%-listing.room_id%>>
+                <span>Total Occupancy</span>
+                <input type="number" name="total_occupancy" id="" min="1" <%-listing.totaloccupancy%>>
+                <span>Total Bedrooms</span>
+                <input type="number" name="total_bedrooms" id="" min="1" <%-listing.total_bedrooms%>>
+                <span>Total Bathrooms</span>
+                <input type="number" name="total_bathrooms" id="" min="1" <%-listing.total_bathrooms%>>
+                <span>Description of the listing</span>
+                <textarea name="summary" id="" cols="30" rows="10"><%-listing.summary%></textarea>
+                <br>
+                <span>Address of the listing</span>
+
+                <span>Enter Location</span>
+                <select id="country" name="addressCountry" required>
+                    <option value="">Select Country</option>
+                    <option value="philippines">Philippines</option>
+                </select>
+                <select id="state_province" name="addressRegion" required>
+                    <option value="">Select Region</option>
+                    <option value="Metro Manila">Metro Manila</option>
+                </select>
+                <select id="city" name="addressCity" required>
+                    <option value="">Select City</option>
+                    <option value="Caloocan">Caloocan</option>
+                    <option value="Las Piñas">Las Piñas</option>
+                    <option value="Makati">Makati</option>
+                    <option value="Malabon">Malabon</option>
+                    <option value="Mandaluyong">Mandaluyong</option>
+                    <option value="Manila">Manila</option>
+                    <option value="Marikina">Marikina</option>
+                    <option value="Muntinlupa">Muntinlupa</option>
+                    <option value="Navotas">Navotas</option>
+                    <option value="Parañaque">Parañaque</option>
+                    <option value="Pasay">Pasay</option>
+                    <option value="Pasig">Pasig</option>
+                    <option value="Pateros">Pateros</option>
+                    <option value="Quezon City">Quezon City</option>
+                    <option value="San Juan">San Juan</option>
+                    <option value="Taguig">Taguig</option>
+                    <option value="Valenzuela">Valenzuela</option>
+                </select>
+                <span>Exact Address</span>
+                <input type="text" name="addressExactAddress" id="" placeholder="Address" required <%-listing.addressExactAddress%> >
+                <span>Street</span>
+                <input type="text" name="addressStreet" id="" <%-listing.addressStreet%>>
+                <span>Postal Code</span>
+                <input type="number" name="addressPostalCode" id="" <%-listing.addressPostalCode%>>
+
+                <span>Has TV?</span>
+                <select id="" name="has_tv" required>
+                    <option value="true">Yes</option>
+                    <option value="false">None</option>
+                </select>
+
+                <span>Has Kitchen?</span>
+                <select id="" name="has_kitchen" required>
+                    <option value="true">Yes</option>
+                    <option value="false">None</option>
+                </select>
+
+                <span>Has internet?</span>
+                <select id="" name="has_internet" required>
+                    <option value="true">Yes</option>
+                    <option value="false">None</option>
+                </select>
+
+                <span>Price Per Month</span>
+                <input type="number" name="price" id="">
+
+                <span>Images</span>
+                <input type="file" multiple accept="image/*" name="images" required>
+                <span>Nearest landmark</span>
+                <input type="text" name="addressNearestLandmark" id="" placeholder="Nearest landmark" required value="<%- listing.addressNearestLandmark %>">
+                <span>Enter Google Map Embedded Link</span>
+                <input type="text" name="embeddedLink" id="" required value="">
+
+                <input type="submit" value="Submit" class="btn">
+            </form>
+        </div>
+    </div>
+<%- include('footer') -%>

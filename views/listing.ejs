@@ -1,0 +1,137 @@
+<%- include('header'); -%>
+    <!-- Listing -->
+    <div class="house-details">
+        <div class="house-title">
+            <h1><%-property.name%></h1>
+            <div class="row">
+                <!-- <div>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <span>245 Reviews </span>
+                </div> -->
+                <div>
+                    <p>Location: <%-property.addressCity%> City, <%-property.addressRegion%>, <%-property.addressCountry%></p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-img-1"><img src="../<%-property.images[0]%>" alt=""></div>
+            <div><img src="../<%-property.images[1]%>" alt=""></div>
+            <div><img src="../<%-property.images[2]%>" alt=""></div>
+            <div><img src="../<%-property.images[3]%>" alt=""></div>
+            <div><img src="../<%-property.images[4]%>" alt=""></div>
+        </div>
+
+        <div class="small-details">
+            <h2>Entire rentail unit hosted by <%-property.lastName%></h2>
+            <p><i class='bx bx-user'></i> <%-property.total_occupancy%> guest &nbsp; <i class='bx bx-bed'></i> <%-property.total_bedrooms%> beds &nbsp; <i class='bx bx-bath' ></i> <%-property.total_bathrooms%> Bathroom</p>
+            <h4>Php <%-property.price%> / Month</h4>
+        </div>
+        <hr class="line">
+
+        <!-- <form action="" class="check-form">
+            <div>
+                <label for="">Check-in</label>
+                <input type="text" name="" id="" placeholder="Add date">
+            </div>
+            <div>
+                <label for="">Check-out</label>
+                <input type="text" name="" id="" placeholder="Add date">
+            </div>
+            <div class="guest-field">
+                <label for="">Guest</label>
+                <input type="text" name="" id="" placeholder="2 Guest">
+            </div>
+            <button type="submit">Check Availability</button>
+        </form> -->
+
+        <ul class="details-list">
+            <li>
+                <i class='bx bx-home'></i>Entire Home 
+                <span>You will have the entire flat for you.</span>
+            </li>
+            <li>
+                <i class='bx bx-brush'></i>Enhance Clean
+                <span>This host has committed to Parehome's cleaning process</span>
+            </li>
+            <li><i class='bx bxs-map-pin'></i>Great Location
+                <span>90% of recent guests gave the location a 5 star rating</span>
+            </li>
+            <li><i class='bx bxs-universal-access'></i>Great Check-in Experience
+                <span>100% of recent guests gave the check-in process a 5 star rating.</span>
+            </li>
+        </ul>
+
+        <hr class="line">
+
+        <p class="home-desc">
+            <!-- Guests will be allocated on the ground floor according to availability. You get a 
+            comfortable two bedroom apartment has a true city feeling. The price qouted is for
+            two guest, at the guest slot please mark the number of guests to get the exact price
+            for groups. The guests will be allocated ground floor according to availability. You 
+            get the comfortable two bedroom apartment that has a true city feeling. -->
+            <%-property.summary%>
+        </p>
+
+        <hr class="line">
+
+        <div class="map">
+            <h3>Location on map</h3>
+            <%-property.embeddedLink%>
+            <b><%-property.addressCity%> City, <%-property.addressRegion%>, <%-property.addressCountry%></b>
+            <p>It's like a home away from home.</p>
+        </div>
+
+        <hr class="line">
+        
+        <div class="host">
+            <img src="../<%-user.profilePicture%>" alt="">
+            <div>
+                <h2>Hosted by <%-property.lastName%></h2>
+                <p>
+                     &nbsp; &nbsp; Contact Number: <%-property.phoneNumber%>
+                </p>
+            </div>
+        </div>
+
+        <a href="#" class="contact-host">Contact Host</a>
+
+        <hr class="line">
+        
+        <%if(isSession) {%>
+            <div class="host">
+                <form action="/submit-review/<%-property._id.toString()%>" method="post">
+                    <span>Write a Review</span> <br>
+                    <textarea name="review" id="" cols="30" rows="10"></textarea><br>
+                    <input type="submit" value="Submit" class="btn"> <br> <br> <br>
+                </form>
+            </div>
+        <%}%>
+        </h2>
+
+        <%if(review.length > 0) {%>
+            <h2>Reviews</h2> <br>
+            <%for (var i = 0; i < review.length; i++) {%>
+                <div class="testimonial-box">
+                    <div class="box-top">
+                        <div class="profile">
+                            <div class="profile-img">
+                                <img src="../<%-review[i].profilePicture%>"/>
+                                <div class="name-user">
+                                    <strong><%-review[i].firstName+" "+review[i].lastName%></strong> <br>
+                                    <span>@<%-review[i].username%></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-comment">
+                        <p><%-review[i].comment%></p>
+                    </div>
+                </div>
+            <%}%>
+        <%}%>
+    </div>
+<%- include('footer'); -%>

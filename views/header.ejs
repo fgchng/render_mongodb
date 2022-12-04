@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>PareHomes</title>
+
+     <!-- Icon -->
+     <link rel="icon" href="../img/icon.ico">
+
+     <!-- Box Icons -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+     
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+     
+     <!-- Link to CSS-->
+     <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+     <!-- Navbar -->
+     <header>
+          <div class="nav container">
+               <!-- Logo -->
+               <a href="/" class="logo"><i class='bx bx-home-alt'></i>PareHome</a>
+
+               <!-- Nav List -->
+               <ul class="navbar">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#sales">Sales</a></li>
+                    <li><a href="/properties">Find A Home</a></li>
+               </ul>
+
+               <% if(!isSession) { %>
+                    <!-- Login Button -->
+                    <a href="/login" class="btn">Log In</a>
+               <% } else { %>
+                    <!-- Dropbox Menu -->
+                    <div class="btn-group">
+                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              <i class='bx bxs-user'></i>
+                         </button>
+                         <div class="dropdown-menu">
+                              <a class="dropdown-item" href="/profile/<%= id %>">Profile</a>
+                              <!-- <a class="dropdown-item" href="/reservation/<%= //id %>">Check Reservations</a>
+                              <div class="dropdown-divider"></div> -->
+                              <a class="dropdown-item" href="/logout">Logout</a>
+                         </div>
+                    </div>
+               <% } %>
+          </div>
+     </header>
