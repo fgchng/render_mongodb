@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/PareHome");
+mongoose.connect("mongodb+srv://admin1:ADMINparehome@cluster0.63wh007.mongodb.net/PareHome");
 
 const Schema = mongoose.Schema;
 
