@@ -5,7 +5,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 const { request } = require("http");
 const bcrypt = require('bcrypt');
-const fileUpload = require("express-fileupload");
 const { application, response } = require("express");
 const saltRounds = 10;
 
@@ -31,8 +30,8 @@ app.use(function(req, res, next){
 });
 
 app.use("/",generalRoutes);
-app.use("/user",userRoutes);
-app.use("/room",roomRoutes);
+app.use("/user",user_routes);
+app.use("/room",room_routes);
 
 
 // Connect to MongoDB
@@ -45,7 +44,7 @@ mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true})
     console.log(`Error connecting to database: ${err}`);
 });
 
-/* User Schema
+ User Schema
 var userSchema = new Schema ({
     user_id: Number,
     firstName: String,
@@ -129,10 +128,10 @@ var reviewSchema = new Schema({
     rating: Number,
     comment: String
 });
-*/
 
 
-/*
+
+
 // Status
 var isLoggedIn = false;
 var sessionId = 0;
@@ -262,7 +261,7 @@ app.get("/logout", function(req, res) {
     sessionId = 0;
     res.redirect("/");
 });
-*/
+
 
 
 app.listen(3000, function() {
