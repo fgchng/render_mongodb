@@ -36,7 +36,14 @@ var upload = multer({ storage: storage });
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://admin1:ADMINparehome@cluster0.63wh007.mongodb.net/PareHome");
+const mongoDBUrl = "mongodb+srv://admin1:ADMINparehome@cluster0.63wh007.mongodb.net/PareHome";
+mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => {
+    console.log(`Connected to database`);
+})
+.catch((err) => {
+    console.log(`Error connecting to database: ${err}`);
+});
 
 const Schema = mongoose.Schema;
 
