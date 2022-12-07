@@ -212,7 +212,7 @@ app.post('/signup_submit', upload.array('profilePicture'), (req, res) => {
             // bannerPicture: "uploads/"+imagePath[1],
         });
     
-        User.save(function(err) {
+        user.save(function(err) {
             if (err) {
                 console.log(err);
                 console.log("Sign Up Failed");
