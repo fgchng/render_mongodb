@@ -212,7 +212,7 @@ app.post('/signup_submit', upload.array('profilePicture'), (req, res) => {
             // bannerPicture: "uploads/"+imagePath[1],
         });
     
-        user.save(function(err) {
+        User.save(function(err) {
             if (err) {
                 console.log(err);
                 console.log("Sign Up Failed");
@@ -393,7 +393,7 @@ app.post("/uploadListing", upload.array('images'), function (req, response) {
         images: imagePath,
     });
 
-    room.save(function(err) {
+    Room.save(function(err) {
         imagePath = [];
         console.log("Length of imagePath: " + imagePath.length);
         if (err) throw err;
@@ -470,7 +470,7 @@ app.post("/submit-review/:id", function(req, res){
             username: user[0].user_name,
         });
 
-        review.save(function(err) {
+        Review.save(function(err) {
             if (err) throw err;
             res.redirect("/listingPage/"+room_ids);
         });
@@ -490,4 +490,3 @@ app.get("/logout", function(req, res) {
 app.listen(3000, function() {
      console.log("Listening on port 3000");
  });
-
