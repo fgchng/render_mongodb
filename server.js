@@ -393,7 +393,7 @@ app.post("/uploadListing", upload.array('images'), function (req, response) {
         images: imagePath,
     });
 
-    Room.save(function(err) {
+    room.save(function(err) {
         imagePath = [];
         console.log("Length of imagePath: " + imagePath.length);
         if (err) throw err;
@@ -470,7 +470,7 @@ app.post("/submit-review/:id", function(req, res){
             username: user[0].user_name,
         });
 
-        Review.save(function(err) {
+        review.save(function(err) {
             if (err) throw err;
             res.redirect("/listingPage/"+room_ids);
         });
