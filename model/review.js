@@ -10,5 +10,6 @@ var reviewSchema = new Schema({
      comment: String
  });
 
- const Review = mongoose.model("review", reviewSchema);
- module.exports = reviewModel;
+const Review = mongoose.model("Review",reviewSchema);
+module.exports = Review;
+ 

@@ -1,11 +1,11 @@
-<%- include('header'); -%>
+<%- include ('header') %>
 <div class="login container">
     <div class="login-container">
         <h2>Create an account</h2>
         <p>Already have an account <a href="/login">Log In</a></p>
 
         <!-- Login Form -->
-        <form action="/signup_submit" method="post" enctype="multipart/form-data">
+        <form action="/signup_submit" method="post">
             <span>Enter your First Name</span>
             <input type="text" name="firstName" id="" placeholder="First Name" required>
             <span>Enter your Last Name</span>
@@ -14,28 +14,12 @@
             <input type="tel" name="phone_number" id="" placeholder="Phone Number" required>
             <span>Enter your email address</span>
             <input type="email" name="email" id="" placeholder="yourmail@gmail.com" required>
-            <span>Description</span>
-            <textarea type="text" name="description" id="" placeholder="Describe yourself" rows="4"></textarea>
             <span>Enter your username</span>
             <input type="text" name="username" id="" placeholder="Username" required>
             <span>Enter your password</span>
             <input type="password" name="password" id="" placeholder="Password" required>
-            <span>Profile Picture</span>
-            <input type="file" accept="image/*" name="profilePicture" required>
-            <!-- <span>Banner Picture</span>
-            <input type="file" accept="image/*" name="bannerPicture" required> -->
-            <span>Full Address</span>
-            <input type="text" name="addressFull" id="">
-            <span>Street</span>
-            <input type="text" name="addressStreet" id="">
-            <span>City</span>
-            <input type="text" name="addressCity" id="">
-            <span>Region</span>
-            <input type="text" name="addressRegion" id="">
-            <span>Country</span>
-            <input type="text" name="addressCountry" id="">
-            <!-- <span>Confirm your password</span>
-            <input type="password" name="" id="" placeholder="Confirm Password" required> -->
+            <span>Confirm your password</span>
+            <input type="password" name="" id="" placeholder="Confirm Password" required>
             <input type="submit" value="Sign up" class="btn">
             <a href="/login">Already have account</a>
         </form>
@@ -46,4 +30,5 @@
         <img src="img/" alt="">
     </div>
 </div>
-<%- include('footer'); -%>
+<%- include('footer') %>
+

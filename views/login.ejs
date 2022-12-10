@@ -1,12 +1,9 @@
-<%- include('header'); -%>
+<%- include('header') %>
 <div class="login container">
     <div class="login-container">
         <h2>Login To Continue</h2>
         <p>Login in with your data you entered <br>during your registration</p>
 
-        <% if(!isCorrectCredentials) { %>
-            <p class="error-message">Your username or password is incorrect. <br> Please try again.</p>
-        <% isCorrectCredentials = true; } %>
         <!-- Login Form -->
         <form action="/login-submit" method="post">
             <span>Enter your username</span>
@@ -22,4 +19,5 @@
         <img src="img/" alt="">
     </div>
 </div>
-<%- include('footer'); -%>
+<%- include('footer') %>
+

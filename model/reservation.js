@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const roomModel = require("./room");
 const Schema = mongoose.Schema;
 
 
@@ -16,6 +15,6 @@ var reservationSchema = new Schema({
      update_at: String
  });
 
- const Reservation = mongoose.model("reservation", reservationSchema);
- module.exports = reservationModel;
-
+ const Reservation = mongoose.model("Reservation",reservationSchema);
+ module.exports = Reservation;
+ 
