@@ -8,7 +8,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname + 'public/css')));
+app.use(express.static(path.join(__dirname, 'public/css')));
 
 
 var isLoggedIn = false;
