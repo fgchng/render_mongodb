@@ -16,30 +16,30 @@
                 <span>Enter your email address</span>
                 <input type="email" name="emailAddress" id="" placeholder="yourmail@gmail.com" required value="<%-listing.emailAddress%>">
                 <span>Apartment Name</span>
-                <input type="text" name="name" id="" required <%-listing.name%>>
+                <input type="text" name="name" id="" required value= "<%-listing.name%>">
                 <span>Room ID</span>
-                <input type="text" name="room_id" id="" <%-listing.room_id%>>
+                <input type="text" name="room_id" id="" value= "<%-listing.room_id%>">
                 <span>Total Occupancy</span>
-                <input type="number" name="total_occupancy" id="" min="1" <%-listing.totaloccupancy%>>
+                <input type="number" name="total_occupancy" id="" min="1" value= "<%-listing.total_occupancy%>">
                 <span>Total Bedrooms</span>
-                <input type="number" name="total_bedrooms" id="" min="1" <%-listing.total_bedrooms%>>
+                <input type="number" name="total_bedrooms" id="" min="1" value= "<%-listing.total_bedrooms%>">
                 <span>Total Bathrooms</span>
-                <input type="number" name="total_bathrooms" id="" min="1" <%-listing.total_bathrooms%>>
+                <input type="number" name="total_bathrooms" id="" min="1" value= "<%-listing.total_bathrooms%>">
                 <span>Description of the listing</span>
                 <textarea name="summary" id="" cols="30" rows="10"><%-listing.summary%></textarea>
                 <br>
                 <span>Address of the listing</span>
 
                 <span>Enter Location</span>
-                <select id="country" name="addressCountry" required>
+                <select id="country" name="addressCountry" required value= "<%-listing.addressCountry%>">
                     <option value="">Select Country</option>
                     <option value="philippines">Philippines</option>
                 </select>
-                <select id="state_province" name="addressRegion" required>
+                <select id="state_province" name="addressRegion" required value= "<%-listing.addressRegion%>">
                     <option value="">Select Region</option>
                     <option value="Metro Manila">Metro Manila</option>
                 </select>
-                <select id="city" name="addressCity" required>
+                <select id="city" name="addressCity" required value= "<%-listing.addressCity%>">
                     <option value="">Select City</option>
                     <option value="Caloocan">Caloocan</option>
                     <option value="Las Piñas">Las Piñas</option>
@@ -60,39 +60,39 @@
                     <option value="Valenzuela">Valenzuela</option>
                 </select>
                 <span>Exact Address</span>
-                <input type="text" name="addressExactAddress" id="" placeholder="Address" required <%-listing.addressExactAddress%> >
+                <input type="text" name="addressExactAddress" id="" placeholder="Address" required value="<%-listing.addressExactAddress%> ">
                 <span>Street</span>
-                <input type="text" name="addressStreet" id="" <%-listing.addressStreet%>>
+                <input type="text" name="addressStreet" id="" value="<%-listing.addressStreet%>">
                 <span>Postal Code</span>
-                <input type="number" name="addressPostalCode" id="" <%-listing.addressPostalCode%>>
+                <input type="number" name="addressPostalCode" id="" value="<%-listing.addressPostalCode%>">
 
                 <span>Has TV?</span>
-                <select id="" name="has_tv" required>
+                <select id="" name="has_tv" required value="<%-listing.has_tv%>">
                     <option value="true">Yes</option>
                     <option value="false">None</option>
                 </select>
 
                 <span>Has Kitchen?</span>
-                <select id="" name="has_kitchen" required>
+                <select id="" name="has_kitchen" required value="<%-listing.has_kitchen%>">
                     <option value="true">Yes</option>
                     <option value="false">None</option>
                 </select>
 
                 <span>Has internet?</span>
-                <select id="" name="has_internet" required>
+                <select id="" name="has_internet" required value="<%-listing.has_internet%>">
                     <option value="true">Yes</option>
                     <option value="false">None</option>
                 </select>
 
                 <span>Price Per Month</span>
-                <input type="number" name="price" id="">
+                <input type="number" name="price" id="" value="<%-listing.price%>">
 
                 <span>Images</span>
                 <input type="file" multiple accept="image/*" name="images" required>
                 <span>Nearest landmark</span>
                 <input type="text" name="addressNearestLandmark" id="" placeholder="Nearest landmark" required value="<%- listing.addressNearestLandmark %>">
                 <span>Enter Google Map Embedded Link</span>
-                <input type="text" name="embeddedLink" id="" required value="">
+                <input type="text" name="embeddedLink" id="" required >
 
                 <input type="submit" value="Submit" class="btn">
             </form>
